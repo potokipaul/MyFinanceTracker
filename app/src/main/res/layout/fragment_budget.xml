@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/surface">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@drawable/header_gradient" android:orientation="vertical"
+        android:paddingLeft="20dp" android:paddingRight="20dp"
+        android:paddingTop="52dp" android:paddingBottom="20dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Budget" android:textColor="@color/white" android:textSize="22sp" android:textStyle="bold"/>
+        <TextView android:id="@+id/tv_budget_period" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="2dp"
+            android:textColor="#BFCFFF" android:textSize="13sp"/>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_budget"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:paddingTop="12dp" android:paddingBottom="80dp" android:clipToPadding="false"/>
+</LinearLayout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/surface">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@drawable/header_gradient" android:orientation="vertical"
+        android:paddingLeft="20dp" android:paddingRight="20dp"
+        android:paddingTop="52dp" android:paddingBottom="20dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Settings" android:textColor="@color/white"
+            android:textSize="22sp" android:textStyle="bold"/>
+    </LinearLayout>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp" android:paddingBottom="100dp">
+
+            <!-- Period -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:background="@drawable/card_elevated" android:orientation="vertical"
+                android:padding="20dp" android:layout_marginBottom="14dp" android:elevation="2dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="📅  Current Period" android:textColor="@color/text_primary"
+                    android:textSize="17sp" android:textStyle="bold" android:layout_marginBottom="18dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Month" android:textColor="@color/text_secondary"
+                    android:textSize="12sp" android:layout_marginBottom="6dp"/>
+                <Spinner android:id="@+id/spinner_month" android:layout_width="match_parent"
+                    android:layout_height="52dp" android:background="@drawable/input_background"
+                    android:paddingLeft="14dp" android:layout_marginBottom="14dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Year" android:textColor="@color/text_secondary"
+                    android:textSize="12sp" android:layout_marginBottom="6dp"/>
+                <Spinner android:id="@+id/spinner_year" android:layout_width="match_parent"
+                    android:layout_height="52dp" android:background="@drawable/input_background"
+                    android:paddingLeft="14dp"/>
+            </LinearLayout>
+
+            <!-- Cash & Borrows -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:background="@drawable/card_elevated" android:orientation="vertical"
+                android:padding="20dp" android:layout_marginBottom="14dp" android:elevation="2dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="💵  Cash &amp; Borrows" android:textColor="@color/text_primary"
+                    android:textSize="17sp" android:textStyle="bold" android:layout_marginBottom="18dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Cash at Hand (₦)" android:textColor="@color/text_secondary"
+                    android:textSize="12sp" android:layout_marginBottom="6dp"/>
+                <EditText android:id="@+id/et_cash_at_hand" android:layout_width="match_parent"
+                    android:layout_height="52dp" android:inputType="numberDecimal"
+                    android:background="@drawable/input_background" android:paddingLeft="14dp"
+                    android:paddingRight="14dp" android:hint="0.00" android:layout_marginBottom="14dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Borrows (₦)" android:textColor="@color/text_secondary"
+                    android:textSize="12sp" android:layout_marginBottom="6dp"/>
+                <EditText android:id="@+id/et_borrows" android:layout_width="match_parent"
+                    android:layout_height="52dp" android:inputType="numberDecimal"
+                    android:background="@drawable/input_background" android:paddingLeft="14dp"
+                    android:paddingRight="14dp" android:hint="0.00" android:layout_marginBottom="16dp"/>
+                <Button android:id="@+id/btn_save_cash" android:layout_width="match_parent"
+                    android:layout_height="52dp" android:text="Save"
+                    android:backgroundTint="@color/primary" android:textColor="@color/white"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <!-- Categories -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:background="@drawable/card_elevated" android:orientation="vertical"
+                android:padding="20dp" android:layout_marginBottom="14dp" android:elevation="2dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🏷️  Categories" android:textColor="@color/text_primary"
+                    android:textSize="17sp" android:textStyle="bold" android:layout_marginBottom="4dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Long-press any category to rename it"
+                    android:textColor="@color/text_secondary" android:textSize="12sp"
+                    android:layout_marginBottom="14dp"/>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+                    <EditText android:id="@+id/et_cat_emoji" android:layout_width="56dp"
+                        android:layout_height="52dp" android:hint="😀" android:inputType="text"
+                        android:gravity="center" android:background="@drawable/input_background"
+                        android:textSize="22sp" android:layout_marginRight="8dp"/>
+                    <EditText android:id="@+id/et_cat_name" android:layout_width="0dp"
+                        android:layout_height="52dp" android:layout_weight="1"
+                        android:hint="Category name" android:inputType="textCapWords"
+                        android:background="@drawable/input_background"
+                        android:paddingLeft="14dp" android:paddingRight="14dp"
+                        android:layout_marginRight="8dp"/>
+                    <Button android:id="@+id/btn_add_category" android:layout_width="52dp"
+                        android:layout_height="52dp" android:text="+"
+                        android:textSize="22sp" android:textStyle="bold"
+                        android:backgroundTint="@color/primary" android:textColor="@color/white"/>
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/custom_categories_list"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical"/>
+            </LinearLayout>
+
+            <!-- Budget Targets -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:background="@drawable/card_elevated" android:orientation="vertical"
+                android:padding="20dp" android:layout_marginBottom="14dp" android:elevation="2dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="💰  Budget Targets (₦)" android:textColor="@color/text_primary"
+                    android:textSize="17sp" android:textStyle="bold" android:layout_marginBottom="18dp"/>
+                <LinearLayout android:id="@+id/budget_targets_container"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical"/>
+                <Button android:id="@+id/btn_save_budget" android:layout_width="match_parent"
+                    android:layout_height="52dp" android:text="Save Budget Targets"
+                    android:backgroundTint="@color/primary" android:textColor="@color/white"
+                    android:textStyle="bold" android:layout_marginTop="8dp"/>
+            </LinearLayout>
+
+            <!-- About -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:background="@drawable/card_elevated" android:orientation="vertical"
+                android:padding="20dp" android:elevation="2dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="ℹ️  About" android:textColor="@color/text_primary"
+                    android:textSize="17sp" android:textStyle="bold" android:layout_marginBottom="8dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="My Finance Tracker v4.0\nTrack income, expenses, budget and more. Data stored locally on your device."
+                    android:textColor="@color/text_secondary" android:textSize="13sp"
+                    android:lineSpacingExtra="4dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
